@@ -1,0 +1,46 @@
+#!/bin/sh
+############################################################
+# check_symlink
+# by Lunetikk
+############################################################
+
+ARG1="$1"
+ARG2="$2"
+
+############################################################
+#Usage: check_symlink -s [/YOUR/SYMLINK/]
+#
+#Options:
+# -s [/YOUR/SYMLINK/]              = Your symlink path
+# -h 							                 = This help
+############################################################
+
+case "$1" in
+-s)
+
+if [ -L $ARG2 ] ; then
+   if [ -e $ARG2 ] ; then
+      echo "Symlink $ARG2 funktioniert"
+          exit 0
+   else
+      echo "Symlink $ARG2 ist fehlerhaft"
+          exit 2
+   fi
+elif [ -e $ARG2 ] ; then
+   echo "$ARG2 ist kein Symlink"
+   exit 2
+else
+   echo "Fehlender Symlink $ARG2"
+   exit 2
+fi
+;;
+
+*)
+echo "Usage: check_symlink -s [/YOUR/SYMLINK/]"
+echo ""
+echo "Options:"
+echo " -s [/YOUR/SYMLINK/]              = Your symlink path"
+echo " -h                               = This help"
+;;
+
+esac
