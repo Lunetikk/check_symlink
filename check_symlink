@@ -11,8 +11,8 @@ ARG2="$2"
 #Usage: check_symlink -s [/YOUR/SYMLINK/]
 #
 #Options:
-# -s [/YOUR/SYMLINK/]              = Your symlink path
-# -h 							                 = This help
+#-s [/YOUR/SYMLINK/]              = Your symlink path"
+#-h                               = This help"
 ############################################################
 
 case "$1" in
