@@ -20,17 +20,17 @@ case "$1" in
 
 if [ -L $ARG2 ] ; then
    if [ -e $ARG2 ] ; then
-      echo "Symlink $ARG2 funktioniert"
+      echo "Symlink $ARG2 is working fine"
           exit 0
    else
-      echo "Symlink $ARG2 ist fehlerhaft"
+      echo "Symlink $ARG2 is broken"
           exit 2
    fi
 elif [ -e $ARG2 ] ; then
-   echo "$ARG2 ist kein Symlink"
+   echo "$ARG2 is no symlink"
    exit 2
 else
-   echo "Fehlender Symlink $ARG2"
+   echo "Missing symlink $ARG2"
    exit 2
 fi
 ;;
